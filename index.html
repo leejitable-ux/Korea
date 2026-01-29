@@ -1,14 +1,76 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국에 오신 것을 환영합니다</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <nav>
+            <a href="#about">소개</a>
+            <a href="#culture">문화</a>
+            <a href="#destinations">여행지</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>아름다운 나라, 한국에 오신 것을 환영합니다</h1>
+            <p>역동적인 문화와 숨막히는 풍경을 발견해보세요.</p>
+            <button>더 알아보기</button>
+        </section>
+
+        <section id="about">
+            <h2>한국에 대하여</h2>
+            <p>대한민국, 통칭 한국은 동아시아의 한반도 남부에 위치한 나라입니다. 활기찬 도시, 유구한 역사, 그리고 맛있는 음식으로 유명합니다.</p>
+        </section>
+
+        <section id="culture">
+            <h2>문화</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <h3>K-팝</h3>
+                    <p>전 세계를 휩쓴 한국 대중음악의 세계에 빠져보세요.</p>
+                </div>
+                <div class="culture-item">
+                    <h3>한식</h3>
+                    <p>김치와 불고기부터 비빔밥까지, 한국의 풍부하고 맛있는 음식을 경험해보세요.</p>
+                </div>
+                <div class="culture-item">
+                    <h3>전통과 역사</h3>
+                    <p>수천 년의 역사를 지닌 고궁과 사찰을 탐방하며 한국의 풍부한 유산을 발견해보세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations">
+            <h2>인기 여행지</h2>
+            <div class="destinations-grid">
+                <div class="destination-item">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="서울">
+                    <h3>서울</h3>
+                    <p>활기찬 수도로, 현대적인 건축물과 유적지가 공존하는 도시입니다.</p>
+                </div>
+                <div class="destination-item">
+                    <img src="https://images.unsplash.com/photo-1579891343048-f34849d14e3d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="부산">
+                    <h3>부산</h3>
+                    <p>아름다운 해변과 활기찬 시장으로 유명한 해안 도시입니다.</p>
+                </div>
+                <div class="destination-item">
+                    <img src="https://images.unsplash.com/photo-1554528766-3b6b45a66699?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="제주도">
+                    <h3>제주도</h3>
+                    <p>독특한 화산 지형과 아름다운 해변으로 유명한 화산섬입니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 한국 방문. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
