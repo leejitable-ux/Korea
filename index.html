@@ -12,7 +12,7 @@
             <a href="#about" data-i18n="nav.about">About</a>
             <a href="#culture" data-i18n="nav.culture">Culture</a>
             <a href="#destinations" data-i18n="nav.destinations">Destinations</a>
-            <a href="#board" data-i18n="nav.board">Q&A</a>
+            <a href="ask.html" data-i18n="nav.board">Ask a local</a>
         </nav>
         <div class="lang-select">
             <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
@@ -87,60 +87,6 @@
             </div>
         </section>
 
-        <section id="board" class="board-section">
-            <div class="board-header">
-                <div>
-                    <h2 data-i18n="board.title">Q&A Board</h2>
-                    <p data-i18n="board.subtitle">Ask anything and anyone can help. (Saved in your browser for now)</p>
-                </div>
-                <div class="board-actions">
-                    <input id="board-search" type="search" placeholder="Search by title, content, or tags" aria-label="Search questions" data-i18n-placeholder="board.search.placeholder" data-i18n-aria="board.search.aria">
-                </div>
-            </div>
-
-            <div class="board-layout">
-                <form id="board-form" class="board-card" autocomplete="off">
-                    <h3 data-i18n="board.form.titleNew">Create a question</h3>
-                    <p id="board-auth-hint" class="board-auth-hint"></p>
-                    <p id="board-error" class="board-error" aria-live="polite"></p>
-                    <input type="hidden" id="board-editing-id">
-                    <label>
-                        <span data-i18n="board.form.titleLabel">Title</span>
-                        <input id="board-title" type="text" placeholder="e.g. Where to buy a transit card in Seoul?" required data-i18n-placeholder="board.form.titlePlaceholder">
-                    </label>
-                    <label>
-                        <span data-i18n="board.form.authorLabel">Author</span>
-                        <input id="board-author" type="text" placeholder="Name or nickname" required data-i18n-placeholder="board.form.authorPlaceholder">
-                    </label>
-                    <label>
-                        <span data-i18n="board.form.tagsLabel">Tags</span>
-                        <input id="board-tags" type="text" placeholder="e.g. transit, food, travel (comma separated)" data-i18n-placeholder="board.form.tagsPlaceholder">
-                    </label>
-                    <label>
-                        <span data-i18n="board.form.contentLabel">Content</span>
-                        <textarea id="board-content" rows="6" placeholder="Write your question here." required data-i18n-placeholder="board.form.contentPlaceholder"></textarea>
-                    </label>
-                    <div class="board-form-actions">
-                        <button type="submit" class="primary" data-i18n="board.form.submit">Post</button>
-                        <button type="reset" class="ghost" data-i18n="board.form.reset">Reset</button>
-                    </div>
-                </form>
-
-                <div class="board-list board-card">
-                    <div class="board-list-header">
-                        <h3 data-i18n="board.list.title">Questions</h3>
-                        <span id="board-count" data-i18n="board.list.count">0</span>
-                    </div>
-                    <ul id="board-items" class="board-items" aria-live="polite"></ul>
-                </div>
-
-                <div class="board-detail board-card">
-                    <div id="board-detail-content" class="board-detail-content">
-                        <p class="board-empty" data-i18n="board.detail.empty">Select a question to see details.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>

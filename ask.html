@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ask.pageTitle">Ask a Local - Korea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ask-page">
+    <header>
+        <nav>
+            <a href="index.html#about" data-i18n="nav.about">About</a>
+            <a href="index.html#culture" data-i18n="nav.culture">Culture</a>
+            <a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a>
+            <a href="ask.html" data-i18n="nav.board">Ask a local</a>
+        </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="ask-hero">
+            <div class="ask-hero-content">
+                <p class="ask-eyebrow" data-i18n="ask.eyebrow">Ask Korea, get a local answer</p>
+                <h1 data-i18n="ask.title">Send your question by email</h1>
+                <p class="ask-subtitle" data-i18n="ask.subtitle">A Korean local will research and summarize your Korea-related questions within 24 hours.</p>
+                <div class="ask-cta">
+                    <a class="cta-button" href="mailto:ask@korea.local" data-i18n="ask.cta">Email your question</a>
+                    <p class="ask-email" data-i18n="ask.email">ask@korea.local</p>
+                </div>
+            </div>
+            <div class="ask-hero-card">
+                <h2 data-i18n="ask.card.title">What we can help with</h2>
+                <ul>
+                    <li data-i18n="ask.card.item1">Trip planning, routes, and transport tips</li>
+                    <li data-i18n="ask.card.item2">Local food, markets, and must-try spots</li>
+                    <li data-i18n="ask.card.item3">Culture questions and etiquette guidance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ask-details">
+            <div class="ask-detail">
+                <h3 data-i18n="ask.steps.title1">Step 1</h3>
+                <p data-i18n="ask.steps.body1">Email your question with your travel dates, budget, and preferences.</p>
+            </div>
+            <div class="ask-detail">
+                <h3 data-i18n="ask.steps.title2">Step 2</h3>
+                <p data-i18n="ask.steps.body2">We ask Korean locals to gather the latest tips and options.</p>
+            </div>
+            <div class="ask-detail">
+                <h3 data-i18n="ask.steps.title3">Step 3</h3>
+                <p data-i18n="ask.steps.body3">Receive a clear summary by email within 24 hours.</p>
+            </div>
+        </section>
+
+        <section class="ask-note">
+            <h2 data-i18n="ask.note.title">Get help from locals</h2>
+            <p data-i18n="ask.note.body">Plan your Korea trip with local insights. Ask anything from "Where should I stay?" to "What is the best 3-day route?"</p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy">&copy; 2023 Visit Korea. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
