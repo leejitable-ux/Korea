@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+    <header class="auth-header">
+        <a class="auth-back" href="index.html" data-i18n="login.back">← Back to home</a>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-status-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <section class="auth-card">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login" data-i18n="login.tab.login">Login</button>
+                <button class="auth-tab" data-tab="signup" data-i18n="login.tab.signup">Sign up</button>
+            </div>
+            <div id="auth-message" class="auth-message" aria-live="polite"></div>
+            <div class="auth-panel active" data-panel="login">
+                <h2 id="auth-title" data-i18n="login.title">Login with email</h2>
+                <form id="login-form" class="auth-form">
+                    <label>
+                        <span data-i18n="login.email">Email</span>
+                        <input type="email" name="email" required placeholder="you@example.com" data-i18n-placeholder="login.emailPlaceholder">
+                    </label>
+                    <label>
+                        <span data-i18n="login.password">Password</span>
+                        <input type="password" name="password" required placeholder="Password" data-i18n-placeholder="login.passwordPlaceholder">
+                    </label>
+                    <button type="submit" class="primary" data-loading-text="Logging in..." data-i18n="login.submit">Login</button>
+                </form>
+                <p class="auth-hint" data-i18n="login.hint">This demo is saved only in your browser.</p>
+            </div>
+            <div class="auth-panel" data-panel="signup">
+                <h2 data-i18n="signup.title">Sign up with email</h2>
+                <form id="signup-form" class="auth-form">
+                    <label>
+                        <span data-i18n="signup.name">Name</span>
+                        <input type="text" name="name" required placeholder="Name or nickname" data-i18n-placeholder="signup.namePlaceholder">
+                    </label>
+                    <label>
+                        <span data-i18n="signup.email">Email</span>
+                        <input type="email" name="email" required placeholder="you@example.com" data-i18n-placeholder="signup.emailPlaceholder">
+                    </label>
+                    <label>
+                        <span data-i18n="signup.password">Password</span>
+                        <input type="password" name="password" required placeholder="8+ characters" data-i18n-placeholder="signup.passwordPlaceholder">
+                    </label>
+                    <button type="submit" class="primary" data-loading-text="Signing up..." data-i18n="signup.submit">Sign up</button>
+                </form>
+                <p class="auth-hint" data-i18n="signup.hint">Passwords are not encrypted in this demo.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

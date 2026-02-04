@@ -1,120 +1,142 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국에 오신 것을 환영합니다</title>
+    <title>Welcome to Korea</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#about">소개</a>
-            <a href="#culture">문화</a>
-            <a href="#destinations">여행지</a>
-            <a href="#board">질문 게시판</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#culture" data-i18n="nav.culture">Culture</a>
+            <a href="#destinations" data-i18n="nav.destinations">Destinations</a>
+            <a href="#board" data-i18n="nav.board">Q&A</a>
         </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
     </header>
 
     <main>
         <section id="hero">
-            <h1>아름다운 나라, 한국에 오신 것을 환영합니다</h1>
-            <p>역동적인 문화와 숨막히는 풍경을 발견해보세요.</p>
-            <button>더 알아보기</button>
+            <h1 data-i18n="hero.title">Welcome to beautiful Korea</h1>
+            <p data-i18n="hero.subtitle">Discover vibrant culture and breathtaking scenery.</p>
+            <button data-i18n="hero.cta">Learn more</button>
         </section>
 
         <section id="about">
-            <h2>한국에 대하여</h2>
-            <p>대한민국, 통칭 한국은 동아시아의 한반도 남부에 위치한 나라입니다. 활기찬 도시, 유구한 역사, 그리고 맛있는 음식으로 유명합니다.</p>
+            <h2 data-i18n="about.title">About Korea</h2>
+            <p data-i18n="about.body">South Korea is located on the southern part of the Korean Peninsula in East Asia. It is known for vibrant cities, deep history, and delicious food.</p>
         </section>
 
         <section id="culture">
-            <h2>문화</h2>
+            <h2 data-i18n="culture.title">Culture</h2>
             <div class="culture-grid">
                 <div class="culture-item">
-                    <h3>K-팝</h3>
-                    <p>전 세계를 휩쓴 한국 대중음악의 세계에 빠져보세요.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Korean.culture-K-pop-01.jpg?width=1200" alt="K-pop dance performance" data-i18n-alt="culture.kpop.alt">
+                    <h3 data-i18n="culture.kpop.title">K-pop</h3>
+                    <p data-i18n="culture.kpop.body">Dive into the world of Korean pop music that swept the globe.</p>
                 </div>
                 <div class="culture-item">
-                    <h3>한식</h3>
-                    <p>김치와 불고기부터 비빔밥까지, 한국의 풍부하고 맛있는 음식을 경험해보세요.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bibimbap_4.jpg?width=1200" alt="Bibimbap in a bowl" data-i18n-alt="culture.food.alt">
+                    <h3 data-i18n="culture.food.title">Korean Cuisine</h3>
+                    <p data-i18n="culture.food.body">From kimchi and bulgogi to bibimbap, explore rich Korean flavors.</p>
                 </div>
                 <div class="culture-item">
-                    <h3>전통과 역사</h3>
-                    <p>수천 년의 역사를 지닌 고궁과 사찰을 탐방하며 한국의 풍부한 유산을 발견해보세요.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bulguksa_temple_main_building.jpg?width=1200" alt="Bulguksa Temple in Gyeongju" data-i18n-alt="culture.history.alt">
+                    <h3 data-i18n="culture.history.title">Tradition & History</h3>
+                    <p data-i18n="culture.history.body">Discover Korea's heritage through palaces and temples with centuries of history.</p>
                 </div>
             </div>
         </section>
 
         <section id="destinations">
-            <h2>인기 여행지</h2>
+            <h2 data-i18n="destinations.title">Top Destinations</h2>
             <div class="destinations-grid">
                 <div class="destination-item">
-                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="서울">
-                    <h3>서울</h3>
-                    <p>활기찬 수도로, 현대적인 건축물과 유적지가 공존하는 도시입니다.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gyeongbokgung_Palace.jpg?width=1200" alt="Seoul" data-i18n-alt="destinations.seoul.alt">
+                    <h3 data-i18n="destinations.seoul.title">Seoul</h3>
+                    <p data-i18n="destinations.seoul.body">A dynamic capital where modern architecture meets historic sites.</p>
                 </div>
                 <div class="destination-item">
-                    <img src="https://images.unsplash.com/photo-1579891343048-f34849d14e3d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="부산">
-                    <h3>부산</h3>
-                    <p>아름다운 해변과 활기찬 시장으로 유명한 해안 도시입니다.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gwangan_Bridge_at_Night,_Busan.jpg?width=1200" alt="Busan" data-i18n-alt="destinations.busan.alt">
+                    <h3 data-i18n="destinations.busan.title">Busan</h3>
+                    <p data-i18n="destinations.busan.body">A coastal city known for beaches and lively markets.</p>
                 </div>
                 <div class="destination-item">
-                    <img src="https://images.unsplash.com/photo-1554528766-3b6b45a66699?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="제주도">
-                    <h3>제주도</h3>
-                    <p>독특한 화산 지형과 아름다운 해변으로 유명한 화산섬입니다.</p>
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seongsan_Ilchulbong.jpg?width=1200" alt="Jeju" data-i18n-alt="destinations.jeju.alt">
+                    <h3 data-i18n="destinations.jeju.title">Jeju</h3>
+                    <p data-i18n="destinations.jeju.body">A volcanic island famous for unique landscapes and beaches.</p>
                 </div>
+            </div>
+            <div class="destinations-cta">
+                <a class="cta-button" href="cities.html" data-i18n="destinations.moreCta">Learn more</a>
+                <p data-i18n="destinations.moreHint">Explore more Korean cities and build your own route.</p>
             </div>
         </section>
 
         <section id="board" class="board-section">
             <div class="board-header">
                 <div>
-                    <h2>질문 게시판</h2>
-                    <p>궁금한 점을 남기면 누구나 답할 수 있어요. (현재는 브라우저에만 저장됩니다)</p>
+                    <h2 data-i18n="board.title">Q&A Board</h2>
+                    <p data-i18n="board.subtitle">Ask anything and anyone can help. (Saved in your browser for now)</p>
                 </div>
                 <div class="board-actions">
-                    <input id="board-search" type="search" placeholder="제목, 내용, 태그로 검색" aria-label="질문 검색">
+                    <input id="board-search" type="search" placeholder="Search by title, content, or tags" aria-label="Search questions" data-i18n-placeholder="board.search.placeholder" data-i18n-aria="board.search.aria">
                 </div>
             </div>
 
             <div class="board-layout">
                 <form id="board-form" class="board-card" autocomplete="off">
-                    <h3>새 질문 등록</h3>
+                    <h3 data-i18n="board.form.titleNew">Create a question</h3>
+                    <p id="board-auth-hint" class="board-auth-hint"></p>
+                    <p id="board-error" class="board-error" aria-live="polite"></p>
                     <input type="hidden" id="board-editing-id">
                     <label>
-                        제목
-                        <input id="board-title" type="text" placeholder="예: 서울에서 교통카드 어디서 사나요?" required>
+                        <span data-i18n="board.form.titleLabel">Title</span>
+                        <input id="board-title" type="text" placeholder="e.g. Where to buy a transit card in Seoul?" required data-i18n-placeholder="board.form.titlePlaceholder">
                     </label>
                     <label>
-                        작성자
-                        <input id="board-author" type="text" placeholder="이름 또는 닉네임" required>
+                        <span data-i18n="board.form.authorLabel">Author</span>
+                        <input id="board-author" type="text" placeholder="Name or nickname" required data-i18n-placeholder="board.form.authorPlaceholder">
                     </label>
                     <label>
-                        태그
-                        <input id="board-tags" type="text" placeholder="예: 교통, 음식, 여행 (콤마로 구분)">
+                        <span data-i18n="board.form.tagsLabel">Tags</span>
+                        <input id="board-tags" type="text" placeholder="e.g. transit, food, travel (comma separated)" data-i18n-placeholder="board.form.tagsPlaceholder">
                     </label>
                     <label>
-                        내용
-                        <textarea id="board-content" rows="6" placeholder="질문 내용을 입력해 주세요." required></textarea>
+                        <span data-i18n="board.form.contentLabel">Content</span>
+                        <textarea id="board-content" rows="6" placeholder="Write your question here." required data-i18n-placeholder="board.form.contentPlaceholder"></textarea>
                     </label>
                     <div class="board-form-actions">
-                        <button type="submit" class="primary">등록</button>
-                        <button type="reset" class="ghost">초기화</button>
+                        <button type="submit" class="primary" data-i18n="board.form.submit">Post</button>
+                        <button type="reset" class="ghost" data-i18n="board.form.reset">Reset</button>
                     </div>
                 </form>
 
                 <div class="board-list board-card">
                     <div class="board-list-header">
-                        <h3>질문 목록</h3>
-                        <span id="board-count">0건</span>
+                        <h3 data-i18n="board.list.title">Questions</h3>
+                        <span id="board-count" data-i18n="board.list.count">0</span>
                     </div>
                     <ul id="board-items" class="board-items" aria-live="polite"></ul>
                 </div>
 
                 <div class="board-detail board-card">
                     <div id="board-detail-content" class="board-detail-content">
-                        <p class="board-empty">질문을 선택하면 상세 내용이 표시됩니다.</p>
+                        <p class="board-empty" data-i18n="board.detail.empty">Select a question to see details.</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +144,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 한국 방문. All Rights Reserved.</p>
+        <p data-i18n="footer.copy">&copy; 2023 Visit Korea. All Rights Reserved.</p>
+        <p class="image-credits">
+            Image credits:
+            <a href="https://commons.wikimedia.org/wiki/File:Korean.culture-K-pop-01.jpg" target="_blank" rel="noopener">K-pop performance</a> by chunjaegirl (CC BY 2.0),
+            <a href="https://commons.wikimedia.org/wiki/File:Bibimbap_4.jpg" target="_blank" rel="noopener">Bibimbap</a> by lovelyheewon (CC0),
+            <a href="https://commons.wikimedia.org/wiki/File:Bulguksa_temple_main_building.jpg" target="_blank" rel="noopener">Bulguksa Temple</a> by Kmonsoor (CC BY-SA 4.0).
+        </p>
     </footer>
 
     <script src="main.js"></script>

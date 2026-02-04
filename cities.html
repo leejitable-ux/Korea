@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Korean Cities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cities-page">
+    <header>
+        <nav>
+            <a href="index.html#about" data-i18n="nav.about">About</a>
+            <a href="index.html#culture" data-i18n="nav.culture">Culture</a>
+            <a href="index.html#destinations" data-i18n="nav.destinations">Destinations</a>
+            <a href="index.html#board" data-i18n="nav.board">Q&A</a>
+        </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="cities-hero">
+            <div class="cities-hero-content">
+                <h1 data-i18n="cities.title">Explore more cities in Korea</h1>
+                <p data-i18n="cities.subtitle">Choose the cities you want to visit and save your dream route.</p>
+            </div>
+        </section>
+
+        <section class="cities-map">
+            <div class="cities-map-inner">
+                <div class="map-stage">
+                    <h2 data-i18n="cities.map.title">Major cities on the map</h2>
+                    <p class="map-hint" data-i18n="cities.map.hint">Hover or tap a city to preview a photo.</p>
+                    <div class="map-frame" role="img" aria-label="Map of South Korea with major cities" data-i18n-aria="cities.map.aria">
+                        <svg class="map-svg" viewBox="0 0 360 560" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="mapGradient" x1="0" x2="1" y1="0" y2="1">
+                                    <stop offset="0%" stop-color="#eaf0ff"/>
+                                    <stop offset="100%" stop-color="#c6d7ff"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M190 15 L235 30 L255 65 L285 95 L305 135 L320 175 L315 220 L320 250 L340 285 L335 330 L310 370 L290 415 L285 455 L260 495 L225 520 L190 545 L165 520 L145 485 L125 440 L105 400 L90 350 L75 305 L70 265 L80 220 L95 185 L110 145 L135 110 L155 80 L170 50 Z" fill="url(#mapGradient)" stroke="#8da2d6" stroke-width="3"/>
+                            <path d="M105 530 L120 545 L140 550 L150 540 L135 525 Z" fill="#c6d7ff" stroke="#8da2d6" stroke-width="2"/>
+                        </svg>
+                        <button class="city-pin" type="button" data-city="seoul" style="--x: 46%; --y: 20%;" data-i18n-aria="cities.seoul.aria"></button>
+                        <button class="city-pin" type="button" data-city="incheon" style="--x: 40%; --y: 22%;" data-i18n-aria="cities.incheon.aria"></button>
+                        <button class="city-pin" type="button" data-city="daejeon" style="--x: 50%; --y: 38%;" data-i18n-aria="cities.daejeon.aria"></button>
+                        <button class="city-pin" type="button" data-city="daegu" style="--x: 58%; --y: 50%;" data-i18n-aria="cities.daegu.aria"></button>
+                        <button class="city-pin" type="button" data-city="gwangju" style="--x: 45%; --y: 58%;" data-i18n-aria="cities.gwangju.aria"></button>
+                        <button class="city-pin" type="button" data-city="ulsan" style="--x: 68%; --y: 57%;" data-i18n-aria="cities.ulsan.aria"></button>
+                        <button class="city-pin" type="button" data-city="busan" style="--x: 66%; --y: 61%;" data-i18n-aria="cities.busan.aria"></button>
+                        <button class="city-pin" type="button" data-city="jeju" style="--x: 35%; --y: 88%;" data-i18n-aria="cities.jeju.aria"></button>
+                    </div>
+                </div>
+                <aside class="map-preview" aria-live="polite">
+                    <div class="preview-image" aria-hidden="true"></div>
+                    <div class="preview-body">
+                        <h3 id="preview-title" data-i18n="cities.map.preview.title">City preview</h3>
+                        <p id="preview-desc" data-i18n="cities.map.preview.empty">Hover or tap a city pin to see details.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="cities" class="cities-section">
+            <div class="cities-controls">
+                <div class="cities-search">
+                    <label for="city-search" data-i18n="cities.search.label">Search cities</label>
+                    <input id="city-search" type="search" placeholder="Search by name or region" aria-label="Search cities" data-i18n-placeholder="cities.search.placeholder" data-i18n-aria="cities.search.aria">
+                </div>
+                <div class="cities-selected">
+                    <strong data-i18n="cities.selectedLabel">Selected:</strong>
+                    <span id="selected-empty" class="selected-empty" data-i18n="cities.selectedEmpty">No cities selected yet.</span>
+                    <div id="selected-cities" class="selected-chips"></div>
+                    <button id="clear-selection" class="ghost" type="button" data-i18n="cities.clear">Clear</button>
+                </div>
+            </div>
+
+            <div class="cities-grid">
+                <label class="city-card" data-city="seoul" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Gyeongbokgung_Palace.jpg?width=1200" data-preview="cities.map.seoul.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.seoul.aria">
+                    <h3 class="city-name" data-i18n="cities.seoul.name">Seoul</h3>
+                    <p class="city-region" data-i18n="cities.seoul.region">Capital Area</p>
+                    <div class="city-tags">
+                        <span>#food</span>
+                        <span>#nightlife</span>
+                        <span>#history</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="busan" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Gwangan_Bridge_at_Night,_Busan.jpg?width=1200" data-preview="cities.map.busan.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.busan.aria">
+                    <h3 class="city-name" data-i18n="cities.busan.name">Busan</h3>
+                    <p class="city-region" data-i18n="cities.busan.region">Southeast Coast</p>
+                    <div class="city-tags">
+                        <span>#beach</span>
+                        <span>#markets</span>
+                        <span>#seafood</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="jeju" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Seongsan_Ilchulbong.jpg?width=1200" data-preview="cities.map.jeju.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.jeju.aria">
+                    <h3 class="city-name" data-i18n="cities.jeju.name">Jeju</h3>
+                    <p class="city-region" data-i18n="cities.jeju.region">Island Escape</p>
+                    <div class="city-tags">
+                        <span>#nature</span>
+                        <span>#island</span>
+                        <span>#sunset</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="incheon" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Incheon_Cityscape.jpg?width=1200" data-preview="cities.map.incheon.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.incheon.aria">
+                    <h3 class="city-name" data-i18n="cities.incheon.name">Incheon</h3>
+                    <p class="city-region" data-i18n="cities.incheon.region">West Coast Gateway</p>
+                    <div class="city-tags">
+                        <span>#harbor</span>
+                        <span>#modern</span>
+                        <span>#islands</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="daegu" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/%EC%95%9E%EC%82%B0%EA%B3%B5%EC%9B%90.jpg?width=1200" data-preview="cities.map.daegu.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.daegu.aria">
+                    <h3 class="city-name" data-i18n="cities.daegu.name">Daegu</h3>
+                    <p class="city-region" data-i18n="cities.daegu.region">Inland Basin</p>
+                    <div class="city-tags">
+                        <span>#coffee</span>
+                        <span>#mountains</span>
+                        <span>#fashion</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="daejeon" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Expo_Bridge_in_Daejeon.jpg?width=1200" data-preview="cities.map.daejeon.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.daejeon.aria">
+                    <h3 class="city-name" data-i18n="cities.daejeon.name">Daejeon</h3>
+                    <p class="city-region" data-i18n="cities.daejeon.region">Science Hub</p>
+                    <div class="city-tags">
+                        <span>#parks</span>
+                        <span>#expo</span>
+                        <span>#family</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="gwangju" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Korea-Gwangju_5177%268%269-06.jpg?width=1200" data-preview="cities.map.gwangju.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.gwangju.aria">
+                    <h3 class="city-name" data-i18n="cities.gwangju.name">Gwangju</h3>
+                    <p class="city-region" data-i18n="cities.gwangju.region">Culture City</p>
+                    <div class="city-tags">
+                        <span>#art</span>
+                        <span>#food</span>
+                        <span>#festivals</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="ulsan" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Taehwa_River_from_Hotel_Riverside_Ulsan.jpg?width=1200" data-preview="cities.map.ulsan.desc">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.ulsan.aria">
+                    <h3 class="city-name" data-i18n="cities.ulsan.name">Ulsan</h3>
+                    <p class="city-region" data-i18n="cities.ulsan.region">Industrial Port</p>
+                    <div class="city-tags">
+                        <span>#ocean</span>
+                        <span>#trails</span>
+                        <span>#whales</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="suwon" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Suwon,_Hwaseong_Fortress.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.suwon.aria">
+                    <h3 class="city-name" data-i18n="cities.suwon.name">Suwon</h3>
+                    <p class="city-region" data-i18n="cities.suwon.region">Hwaseong Fortress</p>
+                    <div class="city-tags">
+                        <span>#history</span>
+                        <span>#fortress</span>
+                        <span>#daytrip</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="sejong" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Government_Complex_Sejong.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.sejong.aria">
+                    <h3 class="city-name" data-i18n="cities.sejong.name">Sejong</h3>
+                    <p class="city-region" data-i18n="cities.sejong.region">Administrative City</p>
+                    <div class="city-tags">
+                        <span>#parks</span>
+                        <span>#museums</span>
+                        <span>#modern</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="gangneung" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Anmok_Beach_20220430_009.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.gangneung.aria">
+                    <h3 class="city-name" data-i18n="cities.gangneung.name">Gangneung</h3>
+                    <p class="city-region" data-i18n="cities.gangneung.region">East Sea Coast</p>
+                    <div class="city-tags">
+                        <span>#beach</span>
+                        <span>#coffee</span>
+                        <span>#sunrise</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="jeonju" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Jeonju_Hanok_Village_20220701_009.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.jeonju.aria">
+                    <h3 class="city-name" data-i18n="cities.jeonju.name">Jeonju</h3>
+                    <p class="city-region" data-i18n="cities.jeonju.region">Hanok & Food</p>
+                    <div class="city-tags">
+                        <span>#hanok</span>
+                        <span>#bibimbap</span>
+                        <span>#tradition</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="gyeongju" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Donggung_Palace_and_Wolji_Pond_in_Gyeongju.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.gyeongju.aria">
+                    <h3 class="city-name" data-i18n="cities.gyeongju.name">Gyeongju</h3>
+                    <p class="city-region" data-i18n="cities.gyeongju.region">Ancient Capital</p>
+                    <div class="city-tags">
+                        <span>#heritage</span>
+                        <span>#temples</span>
+                        <span>#history</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="yeosu" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Korea-Yeosu-Dolsan_Bridge_at_night-01.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.yeosu.aria">
+                    <h3 class="city-name" data-i18n="cities.yeosu.name">Yeosu</h3>
+                    <p class="city-region" data-i18n="cities.yeosu.region">Southern Coast</p>
+                    <div class="city-tags">
+                        <span>#ocean</span>
+                        <span>#nightview</span>
+                        <span>#seafood</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="sokcho" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Buddist_Temple_Seoraksan.JPG?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.sokcho.aria">
+                    <h3 class="city-name" data-i18n="cities.sokcho.name">Sokcho</h3>
+                    <p class="city-region" data-i18n="cities.sokcho.region">Seoraksan Gateway</p>
+                    <div class="city-tags">
+                        <span>#mountains</span>
+                        <span>#beach</span>
+                        <span>#seafood</span>
+                    </div>
+                </label>
+                <label class="city-card" data-city="andong" data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Korea-Andong-Hahoe_Folk_Village-01.jpg?width=1200">
+                    <input class="city-check" type="checkbox" data-i18n-aria="cities.andong.aria">
+                    <h3 class="city-name" data-i18n="cities.andong.name">Andong</h3>
+                    <p class="city-region" data-i18n="cities.andong.region">Traditional Culture</p>
+                    <div class="city-tags">
+                        <span>#heritage</span>
+                        <span>#maskdance</span>
+                        <span>#folk</span>
+                    </div>
+                </label>
+            </div>
+            <p class="cities-helper" data-i18n="cities.helper">Click a card to select a city. You can pick as many as you like.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy">&copy; 2023 Visit Korea. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="cities.js"></script>
+</body>
+</html>
