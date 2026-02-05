@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
 
 :root {
     color-scheme: light;
@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
     margin: 0;
     background: radial-gradient(circle at top left, #fff8f1 0%, #f6efe6 45%, #efe7dc 100%);
     color: var(--ink);
@@ -197,7 +197,7 @@ body {
     border-radius: 12px;
     display: grid;
     place-items: center;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
     background: var(--accent);
     color: #fff;
@@ -283,7 +283,7 @@ body {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
     font-size: clamp(2.6rem, 4vw, 4rem);
     margin: 0;
 }
@@ -353,7 +353,7 @@ body {
 .search-grid {
     display: grid;
     gap: 0.8rem;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: end;
 }
 
@@ -362,6 +362,7 @@ body {
     gap: 0.4rem;
     font-size: 0.85rem;
     color: var(--muted);
+    grid-template-rows: auto 48px;
 }
 
 .search-field input {
@@ -369,7 +370,7 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(15, 27, 45, 0.15);
     font-size: 0.95rem;
-    min-height: 48px;
+    height: 48px;
 }
 
 .search-submit {
@@ -379,8 +380,9 @@ body {
     color: #fff;
     font-weight: 600;
     padding: 0.8rem 1rem;
-    min-height: 48px;
+    height: 48px;
     cursor: pointer;
+    width: 100%;
 }
 
 .hero-chips {
@@ -582,7 +584,7 @@ body {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
     font-size: clamp(2rem, 3vw, 2.8rem);
     margin: 0 0 0.6rem;
 }
@@ -625,7 +627,7 @@ body {
 
 .culture-item h3 {
     margin: 1.2rem 1.5rem 0.4rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .culture-item p {
@@ -653,7 +655,7 @@ body {
 
 .destination-body h3 {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .destination-body p {
@@ -692,7 +694,7 @@ body {
 .feature-card h3,
 .process-card h3 {
     margin-top: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .about-stats {
@@ -1414,6 +1416,10 @@ footer {
     .hero-overlay {
         grid-template-columns: 1fr;
     }
+
+    .search-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -1441,6 +1447,10 @@ footer {
 
     .hero-overlay {
         padding: 4rem 1.5rem 3rem;
+    }
+
+    .search-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero-panel {
