@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     color-scheme: light;
     --ink: #0f1b2d;
@@ -345,6 +351,7 @@ body {
     color: var(--ink);
     display: grid;
     gap: 1rem;
+    max-width: 100%;
 }
 
 .hero-search-title {
@@ -355,7 +362,7 @@ body {
 .search-grid {
     display: grid;
     gap: 0.8rem;
-    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     align-items: end;
 }
 
@@ -365,6 +372,7 @@ body {
     font-size: 0.85rem;
     color: var(--muted);
     grid-template-rows: auto 48px;
+    min-width: 0;
 }
 
 .search-field input {
@@ -386,6 +394,7 @@ body {
     height: 48px;
     cursor: pointer;
     width: 100%;
+    min-width: 0;
 }
 
 .hero-chips {
@@ -1400,6 +1409,12 @@ footer {
     margin-top: 1rem;
     font-size: 0.85rem;
     color: #666;
+}
+
+@media (max-width: 1280px) {
+    .search-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 1024px) {
