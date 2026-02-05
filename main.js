@@ -8,6 +8,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        const slides = Array.from(heroSlider.querySelectorAll('.hero-slide'));
+        const dots = Array.from(heroSlider.querySelectorAll('.hero-dot'));
+        if (slides.length > 1) {
+            let currentIndex = 0;
+            const setActive = (nextIndex) => {
+                slides[currentIndex].classList.remove('is-active');
+                dots[currentIndex]?.classList.remove('is-active');
+                dots[currentIndex]?.removeAttribute('aria-current');
+                currentIndex = (nextIndex + slides.length) % slides.length;
+                slides[currentIndex].classList.add('is-active');
+                dots[currentIndex]?.classList.add('is-active');
+                dots[currentIndex]?.setAttribute('aria-current', 'true');
+            };
+
+            const nextSlide = () => setActive(currentIndex + 1);
+            let intervalId = window.setInterval(nextSlide, 6000);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    setActive(index);
+                    window.clearInterval(intervalId);
+                    intervalId = window.setInterval(nextSlide, 6000);
+                });
+            });
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                window.clearInterval(intervalId);
+            }
+        }
+    }
+
     const languageKey = 'site-lang';
     const localeMap = {
         en: 'en-US',

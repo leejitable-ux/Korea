@@ -217,13 +217,55 @@ body {
 }
 
 .hero {
-    padding: 4.5rem 1.5rem 3.5rem;
+    position: relative;
+    min-height: 78vh;
+    display: grid;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.hero-slider {
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-image: var(--slide-image);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(10, 14, 22, 0.7) 0%, rgba(10, 14, 22, 0.35) 45%, rgba(10, 14, 22, 0.7) 100%);
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5.2rem 1.5rem 4rem;
     display: grid;
     gap: 2.5rem;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .hero-content {
@@ -236,19 +278,19 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.75rem;
-    color: var(--teal);
+    color: #ffd6a1;
     font-weight: 600;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-size: clamp(2.6rem, 4vw, 4rem);
     margin: 0;
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.85);
     margin: 0;
 }
 
@@ -288,12 +330,19 @@ body {
     background: transparent;
 }
 
+.hero .ghost-button {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(15, 27, 45, 0.25);
+}
+
 .hero-search {
     background: var(--card);
     border-radius: 20px;
     padding: 1.6rem;
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(15, 27, 45, 0.06);
+    color: var(--ink);
 }
 
 .hero-search-title {
@@ -305,6 +354,7 @@ body {
     display: grid;
     gap: 0.8rem;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: end;
 }
 
 .search-field {
@@ -319,6 +369,7 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(15, 27, 45, 0.15);
     font-size: 0.95rem;
+    min-height: 48px;
 }
 
 .search-submit {
@@ -328,6 +379,7 @@ body {
     color: #fff;
     font-weight: 600;
     padding: 0.8rem 1rem;
+    min-height: 48px;
     cursor: pointer;
 }
 
@@ -347,7 +399,7 @@ body {
 }
 
 .panel-card {
-    background: var(--card);
+    background: rgba(255, 255, 255, 0.93);
     border-radius: 20px;
     padding: 1.6rem;
     box-shadow: var(--shadow-soft);
@@ -355,7 +407,7 @@ body {
 }
 
 .panel-card-alt {
-    background: linear-gradient(135deg, #ffe7d6 0%, #fff4ea 60%);
+    background: linear-gradient(135deg, rgba(255, 231, 214, 0.95) 0%, rgba(255, 244, 234, 0.95) 60%);
 }
 
 .panel-title {
@@ -384,6 +436,30 @@ body {
     color: var(--teal);
     font-size: 0.75rem;
     font-weight: 600;
+}
+
+.hero-dots {
+    position: absolute;
+    z-index: 3;
+    left: clamp(1.5rem, 4vw, 3rem);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.hero-dot {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+}
+
+.hero-dot.is-active {
+    background: #fff;
+    width: 60px;
 }
 
 .ask-page {
@@ -1334,6 +1410,10 @@ footer {
     .site-header nav {
         justify-content: flex-start;
     }
+
+    .hero-overlay {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1359,12 +1439,17 @@ footer {
         position: static;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
+    .hero-overlay {
+        padding: 4rem 1.5rem 3rem;
     }
 
     .hero-panel {
-        order: -1;
+        order: 1;
+    }
+
+    .hero-dots {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .companion-card {

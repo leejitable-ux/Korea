@@ -37,60 +37,74 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <p class="hero-eyebrow" data-i18n="hero.eyebrow">For travelers who want a Korean inside view</p>
-                <h1 data-i18n="hero.title">Plan Korea with a real local</h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle">We answer in Korean context, design your route, and can even travel with you.</p>
-                <div class="hero-actions">
-                    <a class="cta-button" href="ask.html" data-i18n="hero.cta">Ask a Local</a>
-                    <a class="ghost-button" href="#about" data-i18n="hero.ctaSecondary">See how it works</a>
-                </div>
-                <div class="hero-search">
-                    <p class="hero-search-title" data-i18n="hero.search.title">Start with your vibe</p>
-                    <div class="search-grid">
-                        <label class="search-field">
-                            <span data-i18n="hero.search.place.label">Where do you want to go?</span>
-                            <input type="text" placeholder="Seoul, Jeju, Busan..." data-i18n-placeholder="hero.search.place.placeholder">
-                        </label>
-                        <label class="search-field">
-                            <span data-i18n="hero.search.style.label">Travel style</span>
-                            <input type="text" placeholder="Food, culture, nature" data-i18n-placeholder="hero.search.style.placeholder">
-                        </label>
-                        <label class="search-field">
-                            <span data-i18n="hero.search.days.label">Trip length</span>
-                            <input type="text" placeholder="e.g. 4 days" data-i18n-placeholder="hero.search.days.placeholder">
-                        </label>
-                        <button class="search-submit" type="button" data-i18n="hero.search.button">Build my draft plan</button>
+        <section id="hero" class="hero hero-slider">
+            <div class="hero-slides" aria-hidden="true">
+                <div class="hero-slide is-active" style="--slide-image: url('https://images.pexels.com/photos/35396702/pexels-photo-35396702.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+                <div class="hero-slide" style="--slide-image: url('https://images.pexels.com/photos/18548140/pexels-photo-18548140.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+                <div class="hero-slide" style="--slide-image: url('https://images.pexels.com/photos/29134982/pexels-photo-29134982.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+                <div class="hero-slide" style="--slide-image: url('https://images.pexels.com/photos/19474885/pexels-photo-19474885.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+            </div>
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <p class="hero-eyebrow" data-i18n="hero.eyebrow">For travelers who want a Korean inside view</p>
+                    <h1 data-i18n="hero.title">Plan Korea with a real local</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">We answer in Korean context, design your route, and can even travel with you.</p>
+                    <div class="hero-actions">
+                        <a class="cta-button" href="ask.html" data-i18n="hero.cta">Ask a Local</a>
+                        <a class="ghost-button" href="#about" data-i18n="hero.ctaSecondary">See how it works</a>
                     </div>
-                    <div class="hero-chips">
-                        <span data-i18n="hero.chip1">Night markets</span>
-                        <span data-i18n="hero.chip2">Hanok stays</span>
-                        <span data-i18n="hero.chip3">Cafes</span>
-                        <span data-i18n="hero.chip4">K-hip neighborhoods</span>
+                    <div class="hero-search">
+                        <p class="hero-search-title" data-i18n="hero.search.title">Start with your vibe</p>
+                        <div class="search-grid">
+                            <label class="search-field">
+                                <span data-i18n="hero.search.place.label">Where do you want to go?</span>
+                                <input type="text" placeholder="Seoul, Jeju, Busan..." data-i18n-placeholder="hero.search.place.placeholder">
+                            </label>
+                            <label class="search-field">
+                                <span data-i18n="hero.search.style.label">Travel style</span>
+                                <input type="text" placeholder="Food, culture, nature" data-i18n-placeholder="hero.search.style.placeholder">
+                            </label>
+                            <label class="search-field">
+                                <span data-i18n="hero.search.days.label">Trip length</span>
+                                <input type="text" placeholder="e.g. 4 days" data-i18n-placeholder="hero.search.days.placeholder">
+                            </label>
+                            <button class="search-submit" type="button" data-i18n="hero.search.button">Build my draft plan</button>
+                        </div>
+                        <div class="hero-chips">
+                            <span data-i18n="hero.chip1">Night markets</span>
+                            <span data-i18n="hero.chip2">Hanok stays</span>
+                            <span data-i18n="hero.chip3">Cafes</span>
+                            <span data-i18n="hero.chip4">K-hip neighborhoods</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="panel-card">
+                        <p class="panel-title" data-i18n="hero.panel.title">Sample 3-day Seoul + Gyeongju</p>
+                        <ul class="panel-list">
+                            <li data-i18n="hero.panel.item1"><strong>Day 1:</strong> Palace morning, Ikseon-dong lunch, night market</li>
+                            <li data-i18n="hero.panel.item2"><strong>Day 2:</strong> Local coffee alleys, river walk, live music</li>
+                            <li data-i18n="hero.panel.item3"><strong>Day 3:</strong> KTX to Gyeongju, temple sunset, hanok stay</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <span class="panel-badge" data-i18n="hero.panel.badge">Built by Korean locals</span>
+                            <span class="panel-badge" data-i18n="hero.panel.badge2">Optional companion</span>
+                        </div>
+                    </div>
+                    <div class="panel-card panel-card-alt">
+                        <p class="panel-title" data-i18n="hero.panel.altTitle">Ask in Korean, get it in your language</p>
+                        <p class="panel-body" data-i18n="hero.panel.altBody">We pull local-only recommendations, verify what is open, and send you a clean plan.</p>
+                        <div class="panel-footer">
+                            <span class="panel-badge" data-i18n="hero.panel.altBadge">24-hour reply</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-panel">
-                <div class="panel-card">
-                    <p class="panel-title" data-i18n="hero.panel.title">Sample 3-day Seoul + Gyeongju</p>
-                    <ul class="panel-list">
-                        <li data-i18n="hero.panel.item1"><strong>Day 1:</strong> Palace morning, Ikseon-dong lunch, night market</li>
-                        <li data-i18n="hero.panel.item2"><strong>Day 2:</strong> Local coffee alleys, river walk, live music</li>
-                        <li data-i18n="hero.panel.item3"><strong>Day 3:</strong> KTX to Gyeongju, temple sunset, hanok stay</li>
-                    </ul>
-                    <div class="panel-footer">
-                        <span class="panel-badge" data-i18n="hero.panel.badge">Built by Korean locals</span>
-                        <span class="panel-badge" data-i18n="hero.panel.badge2">Optional companion</span>
-                    </div>
-                </div>
-                <div class="panel-card panel-card-alt">
-                    <p class="panel-title" data-i18n="hero.panel.altTitle">Ask in Korean, get it in your language</p>
-                    <p class="panel-body" data-i18n="hero.panel.altBody">We pull local-only recommendations, verify what is open, and send you a clean plan.</p>
-                    <div class="panel-footer">
-                        <span class="panel-badge" data-i18n="hero.panel.altBadge">24-hour reply</span>
-                    </div>
-                </div>
+            <div class="hero-dots" role="tablist" aria-label="Hero slides">
+                <button class="hero-dot is-active" type="button" aria-label="Seoul skyline" aria-current="true" data-slide="0"></button>
+                <button class="hero-dot" type="button" aria-label="Busan night bridge" data-slide="1"></button>
+                <button class="hero-dot" type="button" aria-label="Jeju Seongsan" data-slide="2"></button>
+                <button class="hero-dot" type="button" aria-label="Gyeongbokgung palace" data-slide="3"></button>
             </div>
         </section>
 
