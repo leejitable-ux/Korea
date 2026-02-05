@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Korea Local</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">K</span>
+            <span class="brand-text">
+                <strong data-i18n="brand.name">Korea Local</strong>
+                <span data-i18n="brand.tagline">Korean answers, tailored routes, travel buddy</span>
+            </span>
+        </a>
+        <nav>
+            <a href="about.html" data-i18n="nav.about">About</a>
+            <a href="culture.html" data-i18n="nav.culture">Culture</a>
+            <a href="destinations.html" data-i18n="nav.destinations">Destinations</a>
+            <a href="ask.html" data-i18n="nav.board">Ask a local</a>
+        </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section about">
+            <div class="section-header">
+                <h2 data-i18n="about.title">Your Korea, guided by Koreans</h2>
+                <p data-i18n="about.body">We are Korean locals who answer in Korean sources, shape a route around your pace, and can join as a travel buddy when you want company.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3 data-i18n="feature.answer.title">Korean answers</h3>
+                    <p data-i18n="feature.answer.body">We read Korean blogs, local maps, and regional updates, then translate what matters.</p>
+                </article>
+                <article class="feature-card">
+                    <h3 data-i18n="feature.plan.title">Custom plan</h3>
+                    <p data-i18n="feature.plan.body">Tell us your dates and budget. We build a plan you can actually follow.</p>
+                </article>
+                <article class="feature-card">
+                    <h3 data-i18n="feature.companion.title">Travel companion</h3>
+                    <p data-i18n="feature.companion.body">If you want, we join part of your trip as a local friend and translator.</p>
+                </article>
+            </div>
+            <div class="about-stats">
+                <div>
+                    <strong data-i18n="about.stat1.value">24h</strong>
+                    <span data-i18n="about.stat1.label">Average response time</span>
+                </div>
+                <div>
+                    <strong data-i18n="about.stat2.value">1:1</strong>
+                    <span data-i18n="about.stat2.label">Local planner match</span>
+                </div>
+                <div>
+                    <strong data-i18n="about.stat3.value">On-trip</strong>
+                    <span data-i18n="about.stat3.label">Companion option</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process">
+            <div class="section-header">
+                <h2 data-i18n="process.title">How it works</h2>
+                <p data-i18n="process.subtitle">We move fast, keep it local, and stay with you if you want.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <h3 data-i18n="process.step1.title">1. Share your dates</h3>
+                    <p data-i18n="process.step1.body">Tell us when, budget, and what you love. Short form, no fluff.</p>
+                </div>
+                <div class="process-card">
+                    <h3 data-i18n="process.step2.title">2. We plan in Korean</h3>
+                    <p data-i18n="process.step2.body">We pull local-only data, verify hours, and map a route that flows.</p>
+                </div>
+                <div class="process-card">
+                    <h3 data-i18n="process.step3.title">3. Travel with support</h3>
+                    <p data-i18n="process.step3.body">Get the plan, ask follow-ups, and request a travel buddy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section companion">
+            <div class="companion-card">
+                <div>
+                    <h2 data-i18n="companion.title">Want a local buddy in Korea?</h2>
+                    <p data-i18n="companion.body">We can join for a day or two as a friendly guide and translator. Match by language and interest.</p>
+                </div>
+                <a class="cta-button" href="ask.html" data-i18n="companion.cta">Request a companion</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy">© 2026 Korea Local. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

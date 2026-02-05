@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Korea Local</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">K</span>
+            <span class="brand-text">
+                <strong data-i18n="brand.name">Korea Local</strong>
+                <span data-i18n="brand.tagline">Korean answers, tailored routes, travel buddy</span>
+            </span>
+        </a>
+        <nav>
+            <a href="about.html" data-i18n="nav.about">About</a>
+            <a href="culture.html" data-i18n="nav.culture">Culture</a>
+            <a href="destinations.html" data-i18n="nav.destinations">Destinations</a>
+            <a href="ask.html" data-i18n="nav.board">Ask a local</a>
+        </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section destinations">
+            <div class="section-header">
+                <h2 data-i18n="destinations.title">Where to go first</h2>
+                <p data-i18n="destinations.subtitle">Pick a base city and we will design the best day-to-day flow.</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-item">
+                    <img src="https://images.unsplash.com/photo-1685761341534-b155d516eb80?auto=format&fit=crop&w=1400&q=80" alt="Seoul" data-i18n-alt="destinations.seoul.alt">
+                    <div class="destination-body">
+                        <h3 data-i18n="destinations.seoul.title">Seoul</h3>
+                        <p data-i18n="destinations.seoul.body">Neighborhood-hopping, palaces, and the best late-night streets.</p>
+                        <span class="tag" data-i18n="destinations.seoul.tag">Urban energy</span>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <img src="https://images.pexels.com/photos/17967690/pexels-photo-17967690.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Busan" data-i18n-alt="destinations.busan.alt">
+                    <div class="destination-body">
+                        <h3 data-i18n="destinations.busan.title">Busan</h3>
+                        <p data-i18n="destinations.busan.body">Harbor views, seafood markets, and coastal cafes.</p>
+                        <span class="tag" data-i18n="destinations.busan.tag">Coastal reset</span>
+                    </div>
+                </div>
+                <div class="destination-item">
+                    <img src="https://images.pexels.com/photos/29134982/pexels-photo-29134982.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Jeju" data-i18n-alt="destinations.jeju.alt">
+                    <div class="destination-body">
+                        <h3 data-i18n="destinations.jeju.title">Jeju</h3>
+                        <p data-i18n="destinations.jeju.body">Volcanic landscapes, ocean drives, and slow villages.</p>
+                        <span class="tag" data-i18n="destinations.jeju.tag">Island escape</span>
+                    </div>
+                </div>
+            </div>
+            <div class="destinations-cta">
+                <a class="cta-button" href="cities.html" data-i18n="destinations.moreCta">Explore more cities</a>
+                <p data-i18n="destinations.moreHint">Build a multi-city plan with a Korean local.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy">© 2026 Korea Local. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

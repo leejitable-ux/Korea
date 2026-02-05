@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture - Korea Local</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">K</span>
+            <span class="brand-text">
+                <strong data-i18n="brand.name">Korea Local</strong>
+                <span data-i18n="brand.tagline">Korean answers, tailored routes, travel buddy</span>
+            </span>
+        </a>
+        <nav>
+            <a href="about.html" data-i18n="nav.about">About</a>
+            <a href="culture.html" data-i18n="nav.culture">Culture</a>
+            <a href="destinations.html" data-i18n="nav.destinations">Destinations</a>
+            <a href="ask.html" data-i18n="nav.board">Ask a local</a>
+        </nav>
+        <div class="lang-select">
+            <label for="lang-select" class="sr-only" data-i18n="lang.label">Language</label>
+            <select id="lang-select" aria-label="Language" data-i18n-aria="lang.label">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="auth-area">
+            <span id="auth-status" class="auth-status" data-i18n="auth.required">Login required</span>
+            <a id="auth-open" class="auth-button" href="login.html" data-i18n="auth.open">Login / Sign up</a>
+            <button id="auth-logout" class="auth-button hidden" data-i18n="auth.logout">Log out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section experience">
+            <div class="section-header">
+                <h2 data-i18n="culture.title">Local experiences worth crossing town for</h2>
+                <p data-i18n="culture.subtitle">We focus on real neighborhoods, slow mornings, and night energy locals love.</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/24498492/pexels-photo-24498492.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Gwangjang market food" data-i18n-alt="culture.market.alt">
+                    <h3 data-i18n="culture.market.title">Market breakfast</h3>
+                    <p data-i18n="culture.market.body">Start the day with bindaetteok, mayak gimbap, and local coffee.</p>
+                </div>
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/33019244/pexels-photo-33019244.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Neighborhood alley" data-i18n-alt="culture.neighborhood.alt">
+                    <h3 data-i18n="culture.neighborhood.title">Neighborhood walks</h3>
+                    <p data-i18n="culture.neighborhood.body">Hidden alleys, design shops, and vintage markets you will not find on big tours.</p>
+                </div>
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/33222188/pexels-photo-33222188.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Seoraksan mountain" data-i18n-alt="culture.nature.alt">
+                    <h3 data-i18n="culture.nature.title">Nature day trips</h3>
+                    <p data-i18n="culture.nature.body">We pair bus schedules, trail timing, and local meals so the day flows.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy">© 2026 Korea Local. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
